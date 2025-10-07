@@ -204,6 +204,58 @@
       .hero img{max-height:360px;object-fit:cover}
       .side{border-left:none;padding-left:0;padding-top:14px;border-top:1px solid var(--rule)}
     }
+   @media (max-width: 768px) {
+  body {
+    background: var(--page);
+    padding: 0;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    padding: 30px 20px;
+  }
+
+  header h1 {
+    font-size: 40px;
+    letter-spacing: 0.2px;
+  }
+
+  .headline {
+    font-size: 26px;
+    line-height: 1.3;
+    padding: 0 10px;
+  }
+
+  .subhead {
+    font-size: 16px;
+    padding: 0 12px;
+  }
+
+  .hero img {
+    max-width: 100%;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+  }
+
+  article {
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 0 10px;
+  }
+
+  .cta p {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  footer {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
   </style>
 </head>
 
