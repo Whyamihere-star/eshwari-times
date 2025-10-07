@@ -1,205 +1,312 @@
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eshwari Times — Idli Cheating Scandal</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ESHWARI TIMES — Breaking: Idli Scandal</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --paper: #f2f2f2;        /* 🩶 newspaper grey background */
-      --page: #f9f9f8;         /* subtle inner white */
-      --text: #111111;         /* strong headline black */
-      --muted: #5a5a5a;        /* for subtext */
-      --border: #d1d1cf;       /* divider lines */
-      --accent: #b91c1c;       /* Eshwari red */
-      --headline: "Libre Baskerville", Georgia, serif;
-      --body: "Source Sans Pro", Arial, sans-serif;
+    :root{
+      --paper-bg: #e9ebec;          /* outer page grey */
+      --page: #f8f7f5;              /* inner white-off */
+      --text: #111111;
+      --muted: #6b6b6b;
+      --rule: #d6d4d1;
+      --accent: #b91c1c;            /* deep red */
+      --funky: #0fb6a1;             /* muted teal for a modern twist */
+      --maxw: 920px;
     }
 
-    body {
-      background: var(--paper);
-      font-family: var(--body);
-      margin: 0;
-      padding: 40px 0;
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.7;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--paper-bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:34px 18px;
+      display:flex;
+      justify-content:center;
     }
 
-    .container {
-      background: var(--page);
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 60px 50px;
-      border: 1px solid var(--border);
-      box-shadow: 0 0 40px rgba(0,0,0,0.05);
+    .shell{
+      width:100%;
+      max-width:var(--maxw);
+      background:linear-gradient(0deg, rgba(255,255,255,0.95), rgba(255,255,255,0.95));
+      border:1px solid var(--rule);
+      padding:44px 46px;
+      box-shadow: 0 18px 50px rgba(6,8,10,0.06);
+      background-color:var(--page);
     }
 
     /* Masthead */
-    header {
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 14px;
-      margin-bottom: 35px;
+    header.mast{
+      text-align:center;
+      border-bottom:1px solid var(--rule);
+      padding-bottom:10px;
+      margin-bottom:18px;
     }
-    header h1 {
-      font-family: var(--headline);
-      font-size: 50px;
-      margin: 0;
-      letter-spacing: 0.3px;
+    .mast-title{
+      font-family:"Libre Baskerville", Georgia, serif;
+      font-size:54px;
+      margin:0;
+      letter-spacing:0.25px;
+      color:var(--text);
+      font-weight:700;
     }
-    .date {
-      font-size: 14px;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-top: 8px;
-      letter-spacing: 1px;
-    }
-
-    /* Headline + Subhead */
-    .headline {
-      font-family: var(--headline);
-      font-size: 36px;
-      line-height: 1.25;
-      text-align: center;
-      margin: 20px 0 12px;
-      color: var(--text);
-    }
-    .subhead {
-      text-align: center;
-      color: var(--muted);
-      font-style: italic;
-      margin-bottom: 35px;
+    .mast-sub{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:6px;
+      text-transform:uppercase;
+      letter-spacing:1px;
     }
 
-    /* Hero Image */
-    .hero {
-      text-align: center;
-      margin: 30px 0;
+    /* Headline */
+    .headline{
+      font-family:"Libre Baskerville", serif;
+      font-size:34px;
+      line-height:1.08;
+      margin:22px 0 8px;
+      text-align:left;
+      color:var(--text);
+      font-weight:700;
     }
-    .hero img {
-      width: 100%;
-      max-width: 680px;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      filter: grayscale(85%) contrast(1.05);
-      box-shadow: 0 0 10px rgba(0,0,0,0.07);
+    .sub{
+      color:var(--muted);
+      margin-bottom:18px;
+      font-style:italic;
+    }
+
+    /* layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:28px;
+      align-items:start;
     }
 
     /* Article */
-    article {
-      font-family: var(--body);
-      font-size: 18px;
-      text-align: justify;
-      column-count: 2;
-      column-gap: 50px;
-      column-rule: 1px solid #e4e4e2;
+    article.story{
+      font-size:18px;
+      line-height:1.68;
+      font-family: "Source Sans 3", Arial, sans-serif;
+      color:var(--text);
+      text-align:justify;
+      column-count:2;
+      column-gap:44px;
+      column-rule:1px solid #e8e7e5;
     }
-    article p {
-      margin-bottom: 1.4em;
+    article p{margin:0 0 1.25em 0;}
+
+    /* hero image */
+    .hero{
+      margin-bottom:18px;
+      border:1px solid var(--rule);
+      padding:6px;
+      background:linear-gradient(0deg, rgba(0,0,0,0.03), rgba(255,255,255,0.015));
+      display:block;
     }
-    article strong {
-      color: var(--accent);
+    .hero img{
+      width:100%;
+      height:auto;
+      display:block;
+      filter:grayscale(85%) contrast(1.04) brightness(0.98);
+      object-fit:cover;
     }
 
-    /* Rumour Box */
-    .rumour {
-      background: #eeeeec;
-      border-left: 4px solid var(--accent);
-      padding: 16px 20px;
-      margin: 30px 0;
-      font-style: italic;
-      color: var(--muted);
+    /* Sidebar */
+    aside.side{
+      font-size:15px;
+      color:var(--text);
+      padding-left:12px;
+      border-left:1px solid var(--rule);
+      font-family: "Source Sans 3", Arial, sans-serif;
+    }
+    .box{
+      background:#fff;
+      border:1px solid #efeeec;
+      padding:14px;
+      margin-bottom:12px;
+      box-shadow: 0 6px 12px rgba(12,14,15,0.03);
+    }
+    .proof-title{
+      font-family:"Libre Baskerville", serif;
+      font-size:16px;
+      margin:0 0 6px 0;
+      color:var(--text);
+    }
+    .proof-item{
+      font-weight:700;
+      margin-top:6px;
+      color:var(--funky);
     }
 
-    /* CTA */
-    .cta {
-      text-align: center;
-      margin-top: 55px;
-      padding-top: 25px;
-      border-top: 1px solid var(--border);
+    /* QR thumb */
+    .qr{
+      display:block;
+      width:100%;
+      text-align:center;
+      margin-top:10px;
     }
-    .cta p {
-      font-family: var(--headline);
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-    .btn {
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      padding: 12px 22px;
-      border-radius: 2px;
-      margin: 0 8px;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #7e1515;
+    .qr img{width:140px;height:140px;border:1px solid #eee;padding:6px;background:#fff}
+
+    /* Rumour */
+    .rum{
+      margin:18px 0;
+      padding:12px 14px;
+      background:#fbfbfa;
+      border-left:4px solid var(--accent);
+      color:var(--muted);
+      font-style:italic;
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 14px;
-      color: var(--muted);
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
+    /* CTA strip */
+    .cta{
+      margin-top:26px;
+      border-top:1px solid var(--rule);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .cta .txt{
+      font-family:"Libre Baskerville",serif;
+      font-size:18px;
+    }
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:3px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+    }
+    .btn-primary{background:var(--funky);color:#fff}
+    .btn-outline{border:1px solid #ddd;color:var(--text);background:transparent}
+
+    /* footer */
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px dashed #eee;
+      padding-top:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container { padding: 40px 24px; }
-      article { column-count: 1; }
-      .headline { font-size: 28px; }
+    /* small screens */
+    @media (max-width:920px){
+      .mast-title{font-size:42px}
+      .grid{grid-template-columns:1fr}
+      article.story{column-count:1}
+      .headline{font-size:28px}
+      .hero img{max-height:360px;object-fit:cover}
+      .side{border-left:none;padding-left:0;padding-top:14px;border-top:1px solid var(--rule)}
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1>ESHWARI TIMES</h1>
-      <div class="date">Tuesday, October 7, 2025 · Bengaluru Edition</div>
+  <div class="shell" role="main" aria-labelledby="masthead">
+    <header class="mast" id="masthead">
+      <div class="mast-title">ESHWARI TIMES</div>
+      <div class="mast-sub">Serving the freshest scoop from the tiffin world — #DramaAtEshwari</div>
     </header>
 
-    <h2 class="headline">BREAKING: IDLI CAUGHT CHEATING ON SAMBAR WITH CHICKEN CURRY</h2>
-    <div class="subhead">A breakfast betrayal rocks the tiffin world as Idli finds spice elsewhere.</div>
+    <h1 class="headline">BREAKING: IDLI CAUGHT CHEATING ON SAMBAR WITH CHICKEN CURRY</h1>
+    <div class="sub">A spicy new pairing rocks the batter community — eyewitness accounts and a leaked menu confirm the scandal.</div>
 
-    <div class="hero">
-      <img src="idli-cheating.jpg" alt="Idli caught cheating on Sambar with Chicken Curry">
-    </div>
+    <div class="grid">
+      <!-- left column -->
+      <div>
+        <div class="hero" aria-hidden="true">
+          <!-- Replace this filename with your cartoon image filename -->
+          <img src="0EEA155E-F57A-4523-9420-749CD46357B3.jpg" alt="Cartoon: Idli caught cheating on Sambar with Chicken Curry">
+        </div>
 
-    <article>
-      <p>For years, <strong>Idli</strong> and <strong>Sambar</strong> have been the symbol of South Indian comfort — simple, warm, and inseparable. But a shocking revelation from <em>Eshwari Canteen</em> has left the breakfast community stunned: Idli was spotted sharing a plate with <strong>Chicken Curry</strong>.</p>
+        <article class="story" aria-label="Main article">
+          <p>For decades, <strong>Idli</strong> and <strong>Sambar</strong> have been the most comfortable pairing on the breakfast table — unassuming, reliable and beloved by the city. But this past Sunday, eyewitnesses at <em>Eshwari Canteen</em> reported seeing Idli spending time with <strong>Chicken Curry</strong> near the steam counter.</p>
 
-      <p>“I saw it with my own eyes,” said Dosa, visibly shaken. “They were side by side… touching. The aroma was different that day.”</p>
+          <p>“I saw them together,” said Dosa, who described the scene as “oddly aromatic.” Sources claim the chemistry between the two was immediate, spicy and unmistakable. Within hours, the canteen quietly added a new pairing to the menu: <strong>Idli + Chicken Curry</strong>.</p>
 
-      <p>According to eyewitnesses, Idli and Chicken Curry were seen mingling behind the counter. Their connection, described as ‘sizzling and spicy,’ has now made it to the official Eshwari Canteen menu.</p>
+          <p>Reactions split between outrage and curiosity. Longtime Sambar devotees expressed shock — while adventurous diners queued to try the forbidden combo. Sambar has not given an official statement, though close friends say she is taking time to simmer.</p>
 
-      <p>Sambar, normally thick-skinned, has refused to comment. Friends close to her say she’s “steaming with anger but keeping it cool.” Meanwhile, Chicken Curry told reporters, “It’s time Idli tried something bold.”</p>
+          <div class="rum">🗣️ <strong>Rumour Mill:</strong> Dosa seen flirting with Chukka Curry — Poori reportedly not amused.</div>
 
-      <div class="rumour">
-        🗣️ <strong>Rumour Mill:</strong> Dosa seen flirting with Chukka Curry. Poori reportedly furious.
+          <p>The Eshwari Times will continue to follow the story and publish any fallout. For those tempted, the pairing is now available at the canteen.</p>
+        </article>
       </div>
 
-      <p>The Eshwari Times can confirm the new controversial item — <strong>Idli + Chicken Curry</strong> — is now available for the curious and the daring. Whether it’s betrayal or evolution, the city can’t stop talking about it.</p>
-    </article>
+      <!-- right column / sidebar -->
+      <aside class="side" aria-label="Sidebar">
+        <div class="box">
+          <div class="proof-title">PROOF</div>
+          <div class="proof-item">Leaked Menu Item — <strong>Idli + Chicken Curry</strong></div>
+          <div style="margin-top:10px;">
+            <a class="btn btn-outline" id="view-menu" href="#">View full menu →</a>
+          </div>
+        </div>
 
-    <div class="cta">
-      <p>Taste the scandal — exclusively at <strong>Eshwari Canteen</strong>.</p>
-      <a href="#" class="btn">Visit Us</a>
-      <a href="#" class="btn">Order Online</a>
+        <div class="box">
+          <div style="font-weight:700;margin-bottom:8px">WHERE</div>
+          <div><a id="visitMap" href="#">Eshwari Canteen — Google Maps</a></div>
+
+          <div class="qr" aria-hidden="true">
+            <!-- Replace this QR with your actual PNG that points to this page or campaign URL -->
+            <img id="qrImg" src="qr-placeholder.png" alt="QR code to read more">
+            <div style="font-size:13px;color:var(--muted);margin-top:8px">Scan to read on your phone</div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div style="font-weight:700;margin-bottom:8px">RUMOUR</div>
+          <div>Sources say the batter community is buzzing. Subscribe to stay ahead of the drama.</div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="cta" role="region" aria-label="Call to action">
+      <div class="txt">Taste the scandal — only at <strong>Eshwari Canteen</strong></div>
+      <div class="buttons">
+        <a class="btn btn-primary" id="orderNow" href="#">Order Online</a>
+        <a class="btn btn-outline" id="visitNow" href="#">Visit Us</a>
+      </div>
     </div>
 
     <footer>
-      © 2025 Eshwari Canteen · #DramaAtEshwari · Follow @eshwaricanteen
+      <div>© 2025 Eshwari Canteen · #DramaAtEshwari</div>
+      <div>Follow @eshwaricanteen · <a href="#" id="subscribeLink">Subscribe</a></div>
     </footer>
   </div>
+
+  <script>
+    // Replace these with your actual live links
+    const visitLink = "https://maps.google.com/?q=Eshwari+Canteen";
+    const orderLink = "https://www.swiggy.com/search?query=Eshwari%20Canteen";
+    const menuLink = "https://example.com/menu"; // update
+
+    document.getElementById('visitNow').href = visitLink;
+    document.getElementById('visitMap').href = visitLink;
+    document.getElementById('orderNow').href = orderLink;
+    document.getElementById('view-menu').href = menuLink;
+    document.getElementById('subscribeLink').href = "#"; // add newsletter link if you have one
+
+    // If you want the QR image to be generated automatically, you can use a URL-based generator
+    // Example (replace pageUrl with your final hosted URL):
+    // const pageUrl = "https://eshwaritimes.example/issue001";
+    // document.getElementById('qrImg').src = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" + encodeURIComponent(pageUrl);
+  </script>
 </body>
 </html>
