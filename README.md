@@ -1,181 +1,203 @@
-
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Eshwari Times — The Idli Scandal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <title>Eshwari Times — Breaking: Idli Cheating Scandal</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --paper: #e9ebec;
       --page: #f8f7f5;
       --text: #111;
-      --muted: #5c5c5c;
+      --muted: #5a5a5a;
+      --border: #d1d1cf;
       --accent: #b91c1c;
       --funky: #0fb6a1;
-      --rule: #d4d2ce;
     }
+
     body {
       background: var(--paper);
-      color: var(--text);
       font-family: "Source Sans 3", Arial, sans-serif;
+      color: var(--text);
       margin: 0;
       padding: 40px 0;
       -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
     }
-    .shell {
+
+    .container {
       max-width: 880px;
       margin: 0 auto;
       background: var(--page);
-      border: 1px solid var(--rule);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-      padding: 50px 40px;
+      padding: 60px 50px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
     }
+
     header {
       text-align: center;
-      border-bottom: 1px solid var(--rule);
+      border-bottom: 1px solid var(--border);
       padding-bottom: 10px;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
+
     header h1 {
-      font-family: "Libre Baskerville", Georgia, serif;
+      font-family: "Libre Baskerville", serif;
       font-size: 52px;
       margin: 0;
+      letter-spacing: 0.5px;
     }
-    header .sub {
-      font-size: 13px;
-      text-transform: uppercase;
+
+    header .date {
+      font-size: 14px;
       color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 5px;
       letter-spacing: 1px;
     }
+
     .headline {
       font-family: "Libre Baskerville", serif;
-      font-size: 36px;
-      margin: 22px 0 8px;
-      line-height: 1.15;
+      font-size: 34px;
+      line-height: 1.2;
+      text-align: center;
+      margin: 20px 0 10px;
     }
+
     .subhead {
-      font-style: italic;
+      text-align: center;
       color: var(--muted);
-      margin-bottom: 20px;
+      font-style: italic;
+      margin-bottom: 35px;
     }
+
     .hero {
-      position: relative;
-      border: 1px solid var(--rule);
-      margin-bottom: 20px;
-      background: #fff;
-      overflow: hidden;
+      text-align: center;
+      margin: 30px 0;
     }
+
     .hero img {
       width: 100%;
-      height: auto;
-      display: block;
-      filter: grayscale(80%) contrast(1.05);
+      max-width: 680px;
+      border: 1px solid var(--border);
+      filter: grayscale(85%) contrast(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
     }
-    .watermark {
-      position: absolute;
-      bottom: 6px;
-      right: 10px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.8);
-      text-shadow: 0 0 2px rgba(0,0,0,0.6);
-      font-family: "Libre Baskerville", serif;
-    }
+
     article {
       font-size: 18px;
-      line-height: 1.68;
       text-align: justify;
+      line-height: 1.68;
     }
-    article p {margin-bottom: 1.3em;}
-    article strong {color: var(--accent);}
+
+    article p {
+      margin-bottom: 1.4em;
+    }
+
+    article strong {
+      color: var(--accent);
+    }
+
     .rumour {
       background: #f1f9f8;
       border-left: 4px solid var(--funky);
-      padding: 14px 18px;
-      margin: 24px 0;
+      padding: 16px 20px;
+      margin: 30px 0;
       font-style: italic;
       color: var(--muted);
     }
+
     .cta {
-      margin-top: 40px;
-      border-top: 1px solid var(--rule);
-      padding-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 14px;
+      text-align: center;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
     }
+
     .cta p {
       font-family: "Libre Baskerville", serif;
-      font-size: 20px;
-      margin: 0;
+      font-size: 22px;
+      margin-bottom: 20px;
     }
+
     .btn {
-      text-decoration: none;
-      padding: 12px 22px;
-      border-radius: 3px;
-      font-weight: 700;
-      transition: .3s;
-      font-size: 14px;
-    }
-    .btn.primary {
       background: var(--funky);
       color: #fff;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 2px;
+      margin: 0 8px;
+      font-weight: 600;
+      transition: 0.3s;
     }
-    .btn.primary:hover {background: #0a8576;}
+
+    .btn:hover {
+      background: #0a8576;
+    }
+
     .btn.outline {
-      border: 1px solid var(--rule);
+      border: 1px solid var(--border);
+      background: transparent;
       color: var(--text);
     }
+
     footer {
       text-align: center;
-      margin-top: 40px;
-      padding-top: 16px;
-      border-top: 1px solid var(--rule);
+      margin-top: 50px;
       font-size: 14px;
       color: var(--muted);
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
     }
-    @media (max-width:700px){
-      header h1{font-size:38px;}
-      .headline{font-size:28px;}
-      .cta{flex-direction:column;align-items:flex-start;}
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 40px 24px;
+      }
+
+      .headline {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="shell">
+  <div class="container">
     <header>
       <h1>ESHWARI TIMES</h1>
-      <div class="sub">Serving the freshest scoop from the tiffin world — #DramaAtEshwari</div>
+      <div class="date">Tuesday, October 7, 2025 · Bengaluru Edition</div>
     </header>
 
     <h2 class="headline">BREAKING: IDLI CAUGHT CHEATING ON SAMBAR WITH CHICKEN CURRY</h2>
-    <div class="subhead">A spicy affair shakes up the breakfast world — exclusive leaks and eyewitness drama.</div>
+    <div class="subhead">After years of breakfast harmony, a spicy scandal rocks the batter community.</div>
 
     <div class="hero">
-      <img src="A05D5063-5E27-4B01-8C6F-D8FDC07B129A.jpeg" alt="Idli cheating scandal cartoon">
-      <div class="watermark">© Eshwari Times</div>
+      <img src="0EEA155E-F57A-4523-9420-749CD46357B3.jpg" alt="Idli caught cheating on Sambar with Chicken Curry">
     </div>
 
     <article>
-      <p>For decades, <strong>Idli</strong> and <strong>Sambar</strong> have been South India’s comfort couple — warm, dependable, and perfectly blended. But this week, <em>Eshwari Canteen</em> insiders reported an unthinkable betrayal: Idli was caught cozying up to <strong>Chicken Curry</strong> near the steam counter.</p>
-      <p>“I saw it myself,” said Dosa, wiping off excess chutney. “They were together — steaming — and Sambar had no clue.” Eyewitnesses describe the chemistry as “rich, spicy, and absolutely scandalous.” Within hours, Eshwari Canteen silently added <strong>Idli + Chicken Curry</strong> to the menu.</p>
-      <p>Sambar has yet to make an official statement but is rumored to be cooling off. Meanwhile, Chicken Curry has declared, “Idli deserves a little more spice in life.”</p>
+      <p>For years, <strong>Idli</strong> and <strong>Sambar</strong> have been the city's comfort couple — wholesome, reliable, and perfectly balanced. But sources from <em>Eshwari Canteen</em> confirm that Idli has been secretly spending steamy mornings with <strong>Chicken Curry</strong>.</p>
 
-      <div class="rumour">🗣️ <strong>Rumour Mill:</strong> Dosa seen flirting with Chukka Curry. Poori reportedly furious.</div>
+      <p>“I saw it with my own eyes,” said Dosa, a crispy eyewitness. “They were whispering near the steam counter. Idli looked softer than usual.”</p>
 
-      <p>The city remains divided — some call it betrayal, others evolution. But one thing’s certain: everyone’s hungry for the truth — and for the new special at Eshwari Canteen.</p>
+      <p>According to insiders, the chemistry between the two was undeniable — fiery, aromatic, and just the right amount of masala. Within hours, Eshwari Canteen quietly launched a new pairing: <strong>Idli + Chicken Curry</strong>, leaving loyal Sambar fans in disbelief.</p>
+
+      <p>Sambar, typically warm and composed, refused to comment. “I just need some time to cool down,” a close associate quoted. Meanwhile, Chicken Curry told reporters, “Idli deserves a little spice in life.”</p>
+
+      <div class="rumour">🗣️ <strong>Rumour Mill:</strong> Dosa spotted flirting with Chukka Curry. Poori reportedly furious.</div>
+
+      <p>The entire tiffin community is divided — some call it betrayal, others call it evolution. Either way, the city can’t stop talking about it. The Eshwari Times will continue to follow the scandal and bring you exclusive coverage from the breakfast frontlines.</p>
     </article>
 
     <div class="cta">
-      <p>Taste the scandal — only at <strong>Eshwari Canteen</strong>.</p>
-      <div>
-        <a class="btn primary" href="https://share.google/bGszEUYZD6aq">Order Online (Source: Swiggy)</a>
-        <a class="btn outline" href="https://maps.google.com/?q=Eshwari+Canteen">Visit Us</a>
-      </div>
+      <p>Taste the scandal — exclusively at <strong>Eshwari Canteen</strong>.</p>
+      <a href="https://share.google/bGszEUYZD6aq" class="btn">Order Online (Source: Swiggy)</a>
+      <a href="https://maps.google.com/?q=Eshwari+Canteen" class="btn outline">Visit Us</a>
     </div>
 
     <footer>
