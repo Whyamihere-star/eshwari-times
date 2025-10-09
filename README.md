@@ -504,7 +504,7 @@
   <script>
     // Replace these with your actual live links
     const visitLink = "https://maps.google.com/?q=Eshwari+Canteen";
-    const orderLink = "https://share.google/bGszEUYZD6aq"; // ✅ updated Swiggy link
+    const orderLink = "https://share.google/bGszEUYZD6aq](https://share.google/bGszEUYZD6aq"; // ✅ updated Swiggy link
     const menuLink = "https://example.com/menu"; // update if needed
 
     document.getElementById('visitNow').href = visitLink;
